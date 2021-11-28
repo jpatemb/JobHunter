@@ -1,0 +1,1589 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="StateMachine" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="953.6,952" sap2010:WorkflowViewState.IdRef="StateMachine_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ct="clr-namespace:CsvHelper.TypeConversion;assembly=CsvHelper" xmlns:do="clr-namespace:DocumentFormat.OpenXml;assembly=DocumentFormat.OpenXml" xmlns:mac="clr-namespace:Microsoft.AspNetCore.Connections;assembly=Microsoft.AspNetCore.Connections.Abstractions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:nu="clr-namespace:NPOI.Util;assembly=NPOI" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sdo="clr-namespace:System.Data.Odbc;assembly=System.Data" xmlns:sds="clr-namespace:System.Data.SqlClient;assembly=System.Data" xmlns:sds1="clr-namespace:System.Data.SqlTypes;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:si1="clr-namespace:System.IdentityModel;assembly=System.IdentityModel" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:usac="clr-namespace:UiPath.Shared.Authentication.ConnectionService;assembly=UiPath.Mail" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="55">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Form.Activities</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Data.SqlClient</x:String>
+      <x:String>System.Data.Common</x:String>
+      <x:String>System.Data.SqlTypes</x:String>
+      <x:String>System.Data.Odbc</x:String>
+      <x:String>System.IdentityModel</x:String>
+      <x:String>UiPath.Shared.Authentication.ConnectionService</x:String>
+      <x:String>NPOI.Util</x:String>
+      <x:String>CsvHelper.TypeConversion</x:String>
+      <x:String>CsvHelper</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>DocumentFormat.OpenXml</x:String>
+      <x:String>Microsoft.AspNetCore.Connections</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.IdentityModel</AssemblyReference>
+      <AssemblyReference>NPOI.OOXML</AssemblyReference>
+      <AssemblyReference>CsvHelper</AssemblyReference>
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>Microsoft.AspNetCore.Connections.Abstractions</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="StateMachine - Job Hunter" sap:VirtualizedContainerService.HintSize="964,887.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <x:Double x:Key="StateContainerWidth">930.4</x:Double>
+        <x:Double x:Key="StateContainerHeight">850.56283612030893</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">288,77.7 288,107.7 288.4,107.7 288.4,112.8</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <State x:Name="__ReferenceID0" DisplayName="Get initial state" sap:VirtualizedContainerService.HintSize="168,94.4" sap2010:WorkflowViewState.IdRef="State_1">
+      <State.Entry>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,488" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DatabaseConnect DatabaseConnection="[serverDB]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=P2_SQL" />
+          <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="333.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What do you want to do?" Options="[{&quot;Add New Client One by One&quot;,&quot;Add New Client by File&quot;,&quot;Check/Delete Existing Client&quot;,&quot;Job Searching&quot;,&quot;Exit&quot;}]" Title="Main Menu">
+            <ui:InputDialog.Result>
+              <OutArgument x:TypeArguments="x:String">[firstinput]</OutArgument>
+            </ui:InputDialog.Result>
+          </ui:InputDialog>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">196,112.8</av:Point>
+          <av:Size x:Key="ShapeSize">168,94.4</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Double x:Key="StateContainerWidth">134.40000000000003</x:Double>
+          <x:Double x:Key="StateContainerHeight">57.680000000000035</x:Double>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="Add Client Option" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">280,207.2 280,237.2 90.76,237.2 90.76,320.8</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>[firstinput = "Add New Client One by One"]</Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="This block is to add client to sql. it cannot delete and see the list&#xA;" DisplayName="Add New Client" sap:VirtualizedContainerService.HintSize="184.8,158.4" sap2010:WorkflowViewState.IdRef="State_2">
+              <State.Entry>
+                <Sequence sap:VirtualizedContainerService.HintSize="956,1408.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="userinputs" />
+                    <Variable x:TypeArguments="x:String" Name="inputdata" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormHeight="{x:Null}" FormTitle="{x:Null}" FormWidth="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="ea004725-a128-49e0-b4a3-f5545e404934" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" DisplayName="Create Form" FormFieldsOutputData="[userinputs]" FormSchema="%[{&quot;label&quot;:&quot;Name&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;name&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;labelWidth&quot;:10,&quot;input&quot;:true},{&quot;label&quot;:&quot;Email Address&quot;,&quot;description&quot;:&quot;Please input your Email Address.&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;emailAddress&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Password&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;password&quot;,&quot;type&quot;:&quot;password&quot;,&quot;input&quot;:true,&quot;protected&quot;:true},{&quot;label&quot;:&quot;Job&quot;,&quot;description&quot;:&quot;Please input the Job you want to search. &quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;job&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Location&quot;,&quot;description&quot;:&quot;You can either input the city name or zip code&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;location&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Reset&quot;,&quot;action&quot;:&quot;reset&quot;,&quot;theme&quot;:&quot;secondary&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;reset&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;},{&quot;label&quot;:&quot;Submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit&quot;,&quot;properties&quot;:{&quot;closeOnSubmit&quot;:&quot;False&quot;},&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;isResetData&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="914.4,1316" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" StartAsMinimized="False">
+                    <ufa:FormActivity.Body>
+                      <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Do" sap:VirtualizedContainerService.HintSize="877.6,1189.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="output" />
+                            <Variable x:TypeArguments="x:String" Name="password1" />
+                            <Variable x:TypeArguments="x:String" Name="useremail" />
+                            <Variable x:TypeArguments="x:String" Name="job" />
+                            <Variable x:TypeArguments="x:String" Name="Location" />
+                            <Variable x:TypeArguments="x:Boolean" Name="failinput" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:DeserializeJson x:TypeArguments="scg:Dictionary(x:String, x:String)" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="836,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[output]" JsonString="[userinputs]" />
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="836,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[output("name")]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[useremail]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[output("emailAddress")]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[password1]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[output("password")]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[job]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[output("job")]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[Location]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[output("location")]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MultipleAssign>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="836,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[userinputs]" />
+                          <If Condition="[username = &quot;&quot; or useremail = &quot;&quot; or password1 = &quot;&quot;  or job = &quot;&quot; or Location = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="836,596.8" sap2010:WorkflowViewState.IdRef="If_1">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="416.8,271.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence DisplayName="Fail to have input" sap:VirtualizedContainerService.HintSize="375.2,178.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="Warning" ChosenButton="[chosenButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Invalid input. Please input again&quot;]" />
+                                </Sequence>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Add to Sql" sap:VirtualizedContainerService.HintSize="375.2,437.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;insert into users (userName, userLocation, userJob, useremail) values ('&quot;+username+&quot;','&quot;+location+&quot;','&quot;+job+&quot;','&quot;+useremail+&quot;')&quot;]">
+                                  <ui:ExecuteNonQuery.Parameters>
+                                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                  </ui:ExecuteNonQuery.Parameters>
+                                </ui:ExecuteNonQuery>
+                                <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;insert into userlogin (emailused,pwforlinkedin,pwforindeed,pwforglassdoor,pwforziprecruiter) values ('&quot;+useremail+&quot;','&quot;+password1+&quot;','&quot;+password1+&quot;','&quot;+password1+&quot;','&quot;+password1+&quot;')&quot;]">
+                                  <ui:ExecuteNonQuery.Parameters>
+                                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                  </ui:ExecuteNonQuery.Parameters>
+                                </ui:ExecuteNonQuery>
+                                <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="Job Message" ChosenButton="[chosenButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Job Done. Do you want to add another new client?&quot;]" />
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ufa:FormActivity.Body>
+                    <ufa:FormActivity.DelayBody>
+                      <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                        <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      </ActivityAction>
+                    </ufa:FormActivity.DelayBody>
+                    <ufa:FormActivity.FormFieldsCollection>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ufa:FormActivity.FormFieldsCollection>
+                  </ufa:FormActivity>
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">7.59999999999999,320.8</av:Point>
+                  <av:Size x:Key="ShapeSize">184.8,158.4</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Double x:Key="StateContainerWidth">151.20000000000005</x:Double>
+                  <x:Double x:Key="StateContainerHeight">45.680000000000064</x:Double>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="Exit out add New Client" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">63.04,320.8 63.04,164.72 196,164.72</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">22</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>[chosenButton = "No"]</Transition.Condition>
+                </Transition>
+                <Transition DisplayName="Add another Client" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">192.4,423.76 222.4,423.76 222.4,376.24 192.4,376.24</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">48</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">24</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID1</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>[chosenButton = "Yes"]</Transition.Condition>
+                </Transition>
+              </State.Transitions>
+              <State.Variables>
+                <Variable x:TypeArguments="x:String" Name="chosenButton" />
+                <Variable x:TypeArguments="x:String" Name="username" />
+              </State.Variables>
+            </State>
+          </Transition.To>
+        </Transition>
+        <Transition DisplayName="Delete Existing Client" sap:VirtualizedContainerService.HintSize="448.8,511.2" sap2010:WorkflowViewState.IdRef="Transition_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">305.2,207.2 305.2,237.2 592.76,237.2 592.76,365.6</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">51</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">26</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="firstinput = &quot;Check/Delete Existing Client&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="This block can check the users and delete the users from the sql. &#xA;" DisplayName="Check/delete existing client" sap:VirtualizedContainerService.HintSize="181.6,168.8" sap2010:WorkflowViewState.IdRef="State_3">
+              <State.Entry>
+                <Sequence sap:VirtualizedContainerService.HintSize="1211.2,3996" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="showusers" />
+                    <Variable x:TypeArguments="x:String" Name="checkid" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="getusers" />
+                    <Variable x:TypeArguments="scg:List(x:String)" Name="list" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[getusers]" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="1169.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="select * from users">
+                    <ui:ExecuteQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteQuery.Parameters>
+                  </ui:ExecuteQuery>
+                  <ui:OutputDataTable DataTable="[getusers]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1169.6,80.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[showusers]" />
+                  <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="User Information" ChosenButton="[deletelist]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1169.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;Do you want to delete users from this list? &quot;+ Environment.NewLine +&#xA;showusers]" />
+                  <If Condition="[deletelist = &quot;Yes&quot;]" sap:VirtualizedContainerService.HintSize="1169.6,3527.2" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="1134.4,3348" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence sap:VirtualizedContainerService.HintSize="1092.8,3255.2" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InterruptibleDoWhile Condition="[deletemore = &quot;Yes&quot;]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1051.2,3100" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                            <ui:InterruptibleDoWhile.Body>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1016,2932.8" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[getusers]" DisplayName="Execute Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="974.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_4" Sql="select * from users">
+                                  <ui:ExecuteQuery.Parameters>
+                                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                  </ui:ExecuteQuery.Parameters>
+                                </ui:ExecuteQuery>
+                                <Assign sap:VirtualizedContainerService.HintSize="974.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="scg:List(x:String)">[list]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="scg:List(x:String)">[new List(of String)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[getusers]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="974.4,236" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <AddToCollection x:TypeArguments="x:String" Collection="[list]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[row(0).ToString+&quot;  &quot;+row(1).tostring+&quot; &quot;+row(2).ToString+ &quot; &quot;+row(3).ToString+&quot; &quot;+row(4).ToString]" />
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                                <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="974.4,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Select the user you want to delete" Options="[list.ToArray]" Title="Delete User">
+                                  <ui:InputDialog.Result>
+                                    <OutArgument x:TypeArguments="x:String">[checkid]</OutArgument>
+                                  </ui:InputDialog.Result>
+                                </ui:InputDialog>
+                                <If Condition="[string.IsNullOrEmpty(checkid)]" sap:VirtualizedContainerService.HintSize="974.4,1999.2" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="375.2,178.4" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Warning" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[&quot;Input invalid. Please try again.&quot;]" />
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="555.2,1840" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Sequence DisplayName="delete sql data" sap:VirtualizedContainerService.HintSize="513.6,597.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap2010:Annotation.AnnotationText="This is hardcode because this need to read string by index.&#xA;" sap:VirtualizedContainerService.HintSize="333.6,120" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[checkid]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[checkid(0)+checkid(1)]</InArgument>
+                                          </Assign.Value>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Assign>
+                                        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_3" Sql="[&quot;delete from users where userid = '&quot;+checkid+&quot;';&quot;]" TimeoutMS="1000">
+                                          <ui:ExecuteNonQuery.Parameters>
+                                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                          </ui:ExecuteNonQuery.Parameters>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:ExecuteNonQuery>
+                                        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_4" Sql="[&quot;delete from userlogin where userid = '&quot;+checkid+&quot;'&quot;]" TimeoutMS="1000">
+                                          <ui:ExecuteNonQuery.Parameters>
+                                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                          </ui:ExecuteNonQuery.Parameters>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:ExecuteNonQuery>
+                                        <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="Job Message" ChosenButton="[deletemore]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_22" Text="[&quot;Job Done. Delete more users?&quot;]" />
+                                      </Sequence>
+                                      <ui:CommentOut sap2010:Annotation.AnnotationText="Cannot find the catche for execute non query&#xA;" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="513.6,1109.6" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="478.4,987.2" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,894.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <TryCatch.Catches>
+                                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="s:Exception">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_18" Text="[&quot;Please, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sd:SyntaxErrorException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sd:SyntaxErrorException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sd:SyntaxErrorException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_24" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_25" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sds:SqlException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sds:SqlException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sds:SqlException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_26" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="s:InvalidOperationException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_27" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="si:IOException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_28" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sma:ApplicationFailedException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sma:ApplicationFailedException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sma:ApplicationFailedException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sds1:SqlNotFilledException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sds1:SqlNotFilledException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sds1:SqlNotFilledException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_29" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sds1:SqlTypeException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sds1:SqlTypeException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sds1:SqlTypeException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_30" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sds1:SqlNullValueException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_14">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sds1:SqlNullValueException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sds1:SqlNullValueException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_31" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sdo:OdbcException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sdo:OdbcException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sdo:OdbcException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_32" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sds1:SqlTruncateException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sds1:SqlTruncateException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sds1:SqlTruncateException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_33" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sd:DataException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sd:DataException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sd:DataException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_34" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="si1:AsynchronousOperationException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_18">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="si1:AsynchronousOperationException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="si1:AsynchronousOperationException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_35" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="ui:CoreAPIException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_19">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="ui:CoreAPIException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="ui:CoreAPIException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_36" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="usac:ConnectionServiceException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_20">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="usac:ConnectionServiceException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="usac:ConnectionServiceException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_37" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="nu:RuntimeException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_21">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="nu:RuntimeException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="nu:RuntimeException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_38" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="ct:TypeConverterException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_22">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="ct:TypeConverterException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="ct:TypeConverterException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_39" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sd:TypedDataSetGeneratorException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_23">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sd:TypedDataSetGeneratorException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sd:TypedDataSetGeneratorException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_40" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="s:TypeAccessException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_24">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="s:TypeAccessException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="s:TypeAccessException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_41" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sma:ContinueException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_25">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sma:ContinueException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sma:ContinueException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_42" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="ucas:StorageException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_26">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="ucas:StorageException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="ucas:StorageException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_43" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sma:RuntimeException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_27">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sma:RuntimeException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sma:RuntimeException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_44" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="do:NamespaceNotUnderstandException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_28">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="do:NamespaceNotUnderstandException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="do:NamespaceNotUnderstandException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_45" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="sds1:SqlAlreadyFilledException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_29">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="sds1:SqlAlreadyFilledException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="sds1:SqlAlreadyFilledException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_46" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="mac:ConnectionAbortedException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_30">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="mac:ConnectionAbortedException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="mac:ConnectionAbortedException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_47" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                                <Catch x:TypeArguments="s:ExecutionEngineException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_31">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ActivityAction x:TypeArguments="s:ExecutionEngineException">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="s:ExecutionEngineException" Name="exception" />
+                                                    </ActivityAction.Argument>
+                                                    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[checkidvalid]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_48" Text="[&quot;Invalid input, Check the User ID again. &quot;]" />
+                                                  </ActivityAction>
+                                                </Catch>
+                                              </TryCatch.Catches>
+                                            </TryCatch>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </ui:InterruptibleDoWhile.Body>
+                          </ui:InterruptibleDoWhile>
+                          <ui:DatabaseDisconnect DatabaseConnection="[serverDB]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="1051.2,22.4" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+                        </Sequence>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="200,84.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">529.2,365.6</av:Point>
+                  <av:Size x:Key="ShapeSize">181.6,168.8</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Double x:Key="StateContainerWidth">148</x:Double>
+                  <x:Double x:Key="StateContainerHeight">56.080000000000041</x:Double>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="Exit out delete block" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">710.8,450 740.8,450 740.8,237.2 330.4,237.2 330.4,207.2</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">63</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>[deletelist = "No" or checkidvalid = "Cancel" or deletemore = "No"]</Transition.Condition>
+                </Transition>
+                <Transition DisplayName="Check again" sap:VirtualizedContainerService.HintSize="448.8,511.2" sap2010:WorkflowViewState.IdRef="Transition_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">529.2,500.64 499.2,500.64 499.2,416.24 529.2,416.24</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">61</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">21</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID2</x:Reference>
+                  </Transition.To>
+                  <Transition.Action>
+                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[deletemore]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Transition.Action>
+                  <Transition.Condition>[checkidvalid = "Ok" or deletemore = "Yes"]</Transition.Condition>
+                </Transition>
+              </State.Transitions>
+              <State.Variables>
+                <Variable x:TypeArguments="x:String" Name="deletelist" />
+                <Variable x:TypeArguments="x:String" Name="checkidvalid" />
+                <Variable x:TypeArguments="x:String" Name="deletemore" />
+              </State.Variables>
+            </State>
+          </Transition.To>
+        </Transition>
+        <Transition DisplayName="Job Searching" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">364,183.6 836.68,183.6 836.68,265.2</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">56</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">42</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="firstinput = &quot;Job Searching&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID4" DisplayName="Job Searching" sap:VirtualizedContainerService.HintSize="596.8,2860.8" sap2010:WorkflowViewState.IdRef="State_7">
+              <State.Entry>
+                <Sequence sap:VirtualizedContainerService.HintSize="552,2499.2" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="users" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="userlogin" />
+                    <Variable x:TypeArguments="sd:DataTable" Name="jointable" />
+                    <Variable x:TypeArguments="x:String" Name="username" />
+                    <Variable x:TypeArguments="x:String" Name="useremail" />
+                    <Variable x:TypeArguments="x:String" Name="passwordindeed" />
+                    <Variable x:TypeArguments="x:String" Name="job" />
+                    <Variable x:TypeArguments="x:String" Name="location" />
+                    <Variable x:TypeArguments="x:String" Name="passwordlinkedin" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[users]" DisplayName="Execute Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="510.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="select * from users">
+                    <ui:ExecuteQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteQuery.Parameters>
+                  </ui:ExecuteQuery>
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[userlogin]" DisplayName="Execute Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="510.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="select * from userlogin">
+                    <ui:ExecuteQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteQuery.Parameters>
+                  </ui:ExecuteQuery>
+                  <ui:JoinDataTables DataTable1="[users]" DataTable2="[userlogin]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="510.4,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[jointable]">
+                    <ui:JoinDataTables.Arguments>
+                      <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                        <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                          <ui:JoinOperationArgument.Column1>
+                            <InArgument x:TypeArguments="x:String">["userid"]</InArgument>
+                          </ui:JoinOperationArgument.Column1>
+                          <ui:JoinOperationArgument.Column2>
+                            <InArgument x:TypeArguments="x:String">["userid"]</InArgument>
+                          </ui:JoinOperationArgument.Column2>
+                        </ui:JoinOperationArgument>
+                      </scg:List>
+                    </ui:JoinDataTables.Arguments>
+                  </ui:JoinDataTables>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[jointable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510.4,1921.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,1800.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="ui:QueueItem" Name="loginInfo" />
+                            <Variable x:TypeArguments="x:String" Name="passwordglassdoor" />
+                            <Variable x:TypeArguments="x:String" Name="passwordzip" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="ClientsLogin">
+                            <ui:AddQueueItem.ItemInformation>
+                              <InArgument x:TypeArguments="x:String" x:Key="username">[row.Item("username").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="useremail">[row.Item("useremail").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="passwordindeed">[Row.item("pwforindeed").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="Job">[row.Item("userjob").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="location">[row.item("userlocation").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="passwordlinkedin">[Row.item("pwforlinkedin").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="passwordglassdoor">[Row.item("pwforglassdoor").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="passwordzip">[Row.item("pwforziprecruiter").ToString]</InArgument>
+                            </ui:AddQueueItem.ItemInformation>
+                          </ui:AddQueueItem>
+                          <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="ClientsLogin" TransactionItem="[loginInfo]" />
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="435.2,319.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("username").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[useremail]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("useremail").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[passwordindeed]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("passwordindeed").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[job]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("Job").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[location]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("location").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[passwordlinkedin]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("passwordlinkedin").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[passwordglassdoor]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("passwordglassdoor").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[passwordzip]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[logininfo.SpecificContent("passwordzip").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MultipleAssign>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke indeed workflow" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="indeed.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="serverDB">[serverDB]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="username">[username]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="useremail">[useremail]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="password">[passwordindeed]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="location">[location]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="job">[job]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LinkedIn workflow" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LinkedIn.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="serverDB">[serverDB]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="username">[username]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="useremail">[useremail]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="password">[passwordlinkedin]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="job">[job]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="location">[location]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ZipRecruiter workflow" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ZipRecruiter.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="username">[username]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="useremail">[useremail]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="password">[passwordzip]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="job">[job]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="location">[location]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,284.8" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,206.4" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GlassDoor workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GlassDoor.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="username">[username]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="useremail">[useremail]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="password">[passwordglassdoor]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="job">[job]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="location">[location]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,317.6" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,239.2" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="Hello! Here are some new job postings from Job Hunter" DisplayName="Send SMTP Mail Message" Email="testemailp2fk@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="tes32!ter" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="New Job Postings" To="[useremail]">
+                                  <ui:SendMail.Files>
+                                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                                      <InArgument x:TypeArguments="x:String">C:\revature\P2\Goldeneyez-P2-main\Job Hunter\exceltestsheet\FullJobExcel.xlsx</InArgument>
+                                    </scg:List>
+                                  </ui:SendMail.Files>
+                                </ui:SendMail>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="435.2,80.8" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Status="Successful" TransactionItem="[loginInfo]">
+                            <ui:SetTransactionStatus.Analytics>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                            </ui:SetTransactionStatus.Analytics>
+                            <ui:SetTransactionStatus.Output>
+                              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                            </ui:SetTransactionStatus.Output>
+                          </ui:SetTransactionStatus>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                  </ui:ForEachRow>
+                  <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" ChosenButton="[finish]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="510.4,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Job is Done.&quot;]" />
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">763.2,265.2</av:Point>
+                  <av:Size x:Key="ShapeSize">133.6,149.6</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Double x:Key="StateContainerWidth">100</x:Double>
+                  <x:Double x:Key="StateContainerHeight">112.88</x:Double>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="Exit out of Job Searching" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">896.8,354.96 926.8,354.96 926.8,164.72 364,164.72</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">40</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="finish = &quot;Ok&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_4" />
+                  </Transition.Condition>
+                </Transition>
+              </State.Transitions>
+              <State.Variables>
+                <Variable x:TypeArguments="x:String" Name="finish" />
+              </State.Variables>
+            </State>
+          </Transition.To>
+        </Transition>
+        <Transition DisplayName="Exit" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">364,131.68 394,131.68 394,76.38 550,76.38</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">12</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="firstinput = &quot;Exit&quot; or firstinput = &quot;&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_5" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID5" DisplayName="Exit Program" sap:VirtualizedContainerService.HintSize="133.6,61.6" sap2010:WorkflowViewState.IdRef="State_8" IsFinal="True">
+              <State.Entry>
+                <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Caption="End Program" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[&quot;Good Bye. Have a good day!&quot;]" />
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">550,42.5</av:Point>
+                  <av:Size x:Key="ShapeSize">133.6,61.6</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </State>
+          </Transition.To>
+        </Transition>
+        <Transition DisplayName="Add New Client by File" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">229.6,207.2 229.6,237.2 292.88,237.2 292.88,326.8</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">15</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">10</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>[firstinput = "Add New Client by File"]</Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Pick file from the PC and read the Excel file and save it to sql&#xA;" DisplayName="Pick files " sap:VirtualizedContainerService.HintSize="163.2,186.4" sap2010:WorkflowViewState.IdRef="State_9">
+              <State.Entry>
+                <Sequence sap:VirtualizedContainerService.HintSize="1086.4,2379.2" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="readfile" />
+                    <Variable x:TypeArguments="x:String" Name="variable1" />
+                    <Variable x:TypeArguments="x:String" Name="username" />
+                    <Variable x:TypeArguments="x:String" Name="useremail" />
+                    <Variable x:TypeArguments="x:String" Name="passwordindeed" />
+                    <Variable x:TypeArguments="x:String" Name="job" />
+                    <Variable x:TypeArguments="x:String" Name="location" />
+                    <Variable x:TypeArguments="x:String" Name="passwordlinkedin" />
+                    <Variable x:TypeArguments="x:String" Name="passwordglassdoor" />
+                    <Variable x:TypeArguments="x:String" Name="passwordzip" />
+                    <Variable x:TypeArguments="x:String" Name="readtable" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1044.8,370.4" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                    <TryCatch.Try>
+                      <ui:SelectFile DisplayName="Select File" Filter="Excel|*.xlsx;*.xls;*.xlsm;*.xlsb" sap:VirtualizedContainerService.HintSize="384,139.2" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[selectfile]" />
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_32">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[buttom]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">No</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1044.8,342.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch.Try>
+                      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[readfile]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[selectfile]" />
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[readtable]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Error</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </ActivityAction>
+                      </Catch>
+                      <Catch x:TypeArguments="ui:ExcelException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="ui:ExcelException">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ui:ExcelException" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[readtable]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Error</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <If Condition="[readtable isnot Nothing]" sap:VirtualizedContainerService.HintSize="1044.8,1493.6" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,178.4" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="YesNo" Caption="Warning" ChosenButton="[buttom]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_20" Text="[&quot;File invalid. Please follow the file format as Header below.&quot; + Environment.NewLine+&#xA;&quot;username, useremail, job, location, pwforindeed, pwforlinkedin, pwforglassdoor, pwforziprecruiter&quot;+Environment.NewLine+&#xA;&quot;Do you want To add another file?&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="625.6,1334.4" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,1241.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Not null or not empty" sap:VirtualizedContainerService.HintSize="547.2,1010.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[readfile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="505.6,792" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                <ui:ForEachRow.Body>
+                                  <ActivityAction x:TypeArguments="sd:DataRow">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,671.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,319.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                                        <ui:MultipleAssign.AssignOperations>
+                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("username").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[useremail]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("useremail").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_26">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[passwordindeed]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("pwforindeed").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_27">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[job]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("job").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[location]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("location").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[passwordlinkedin]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("pwforlinkedin").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[passwordglassdoor]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("pwforglassdoor").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:String">[passwordzip]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:String">[Row.Item("pwforziprecruiter").ToString]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                          </scg:List>
+                                        </ui:MultipleAssign.AssignOperations>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:MultipleAssign>
+                                      <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="430.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_10" Sql="[&quot;insert into users (userName, userLocation, userJob, useremail) values ('&quot;+username+&quot;','&quot;+location+&quot;','&quot;+job+&quot;','&quot;+useremail+&quot;')&quot;]">
+                                        <ui:ExecuteNonQuery.Parameters>
+                                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                        </ui:ExecuteNonQuery.Parameters>
+                                      </ui:ExecuteNonQuery>
+                                      <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[serverDB]" sap:VirtualizedContainerService.HintSize="430.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_9" Sql="[&quot;insert into userlogin (emailused,pwforlinkedin,pwforindeed,pwforglassdoor,pwforziprecruiter) values ('&quot;+useremail+&quot;','&quot;+passwordlinkedin+&quot;','&quot;+passwordindeed+&quot;','&quot;+passwordglassdoor+&quot;','&quot;+passwordzip+&quot;')&quot;]">
+                                        <ui:ExecuteNonQuery.Parameters>
+                                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                        </ui:ExecuteNonQuery.Parameters>
+                                      </ui:ExecuteNonQuery>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEachRow.Body>
+                              </ui:ForEachRow>
+                              <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[buttom]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="505.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Job Done. Add more file?&quot;]" />
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" ChosenButton="[buttom]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_21" Text="[&quot;File invalid. Please follow the file format as Header below.&quot; + Environment.NewLine+&#xA;&quot;username, useremail, job, location, pwforindeed, pwforlinkedin, pwforglassdoor, pwforziprecruiter&quot;]" />
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">268.4,326.8</av:Point>
+                  <av:Size x:Key="ShapeSize">163.2,186.4</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Double x:Key="StateContainerWidth">129.97362631089857</x:Double>
+                  <x:Double x:Key="StateContainerHeight">73.78385488066769</x:Double>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="add more files" sap:VirtualizedContainerService.HintSize="448.8,511.2" sap2010:WorkflowViewState.IdRef="Transition_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">431.6,475.92 461.6,475.92 461.6,382.72 431.6,382.72</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">60</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID3</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>[buttom = "Yes"]</Transition.Condition>
+                </Transition>
+                <Transition DisplayName="Exit out" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">358.16,326.8 358.16,296.8 246.4,296.8 246.4,207.2</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">42</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">23</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>[buttom = "No" or buttom = "Ok"]</Transition.Condition>
+                </Transition>
+              </State.Transitions>
+              <State.Variables>
+                <Variable x:TypeArguments="x:String" Name="selectfile" />
+                <Variable x:TypeArguments="x:String" Name="buttom" />
+              </State.Variables>
+            </State>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+      <State.Variables>
+        <Variable x:TypeArguments="x:String" Name="firstinput" />
+      </State.Variables>
+    </State>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="serverDB" />
+    </StateMachine.Variables>
+  </StateMachine>
+</Activity>
