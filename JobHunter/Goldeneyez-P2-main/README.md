@@ -27,15 +27,10 @@ A user can expect to input Name, Search Area, Job Title, Experience Required. An
 
 ### Job Hunter’s Goals:
 - [x] Program should take user info and job and apply that data to 4 job sites (Indeed, Linkedin, GlassDoor, ZipRecruiter).
-- [ ] Program should use a filter activity to narrow down job listings.
 - [x] Users should be able to add names and addresses to a search list.
 - [x] Users should be able to select the job to search for.
 - [x] Send client email with excel file attached.
-- [ ] Program should be able to run weekly (Friday, 3PM) from Orchestrator
 
-### Stretch Goals:
-- [ ] Checking emails for call backs (if user allows).
-- [ ] Filter out duplicate data from same vendor.
 
 ### Constraints:
 * User data and job data stored in a PostgreSQL.
